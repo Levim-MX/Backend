@@ -9,7 +9,9 @@ const OrderSchema = new mongoose.Schema({
   branch_name: { type: String, ref: "Branch", required: true },
   service_name: { type: String, ref: "Service", required: true },
   selected_sub_service: { type: String },
-  confirmed: { type: Boolean, default: false },
+  confirmed: { type: Boolean, default: false }, // حالة تأكيد الطلب
+}, {
+  timestamps: true // يضيف createdAt و updatedAt تلقائيًا
 });
 
 module.exports = mongoose.model("Order", OrderSchema);
